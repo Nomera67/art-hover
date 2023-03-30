@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-variation-settings: 'wght' 700;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f6eee8;
+}
+
+//fonts
+
+@font-face {
+    font-family: 'DancingScript';
+    src: url('./assets/fonts/DancingScript-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('./assets/fonts/Poppins-Light.ttf');
+    font-weight: light;
+}
+
+
+//colors
+
+$main-color: #F1FAEE;
+$secondary-color: #457B9D;
+$darker-color: #1D3557;
+$lighter-color: #A8DADC;
+$third-color: #E63946;
+
+//sizes
+
+$navbar-height: 5rem;
+
+//timings
+
+
+//loading animation speed
+$speed: 2.5s;
+
+//keyframes
+
+//loading animation keyframes
+
+@keyframes load {
+    0% {
+      background: $darker-color;
+      margin-top: 25%;
+      height: 10%;
+    }
+    50% {
+      background: $lighter-color;
+      height: 100%;
+      margin-top: 0%;
+    }
+    100% {
+      background: $darker-color;
+      height: 10%;
+      margin-top: 25%;
+    }
+  }

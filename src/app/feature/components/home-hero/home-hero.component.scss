@@ -1,0 +1,7 @@
+@use '../../../../styles.scss' as *;
+
+.hero{
+    &__container{
+        margin-top: $navbar-height;
+    }
+}

@@ -1,0 +1,62 @@
+@use '../../../../styles.scss' as *;
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    margin: 10px auto;
+    width: 700px;
+    height: $navbar-height;
+    background-color: rgba(227, 182, 132, .4);
+    backdrop-filter: blur(1.6rem);
+    z-index: 4;
+}
+
+.logo{
+    &__container{
+
+    }
+    &__item{
+        font-family: DancingScript;
+        font-size: 2rem;
+        font-weight: bold;
+        color: $secondary-color;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $third-color;
+        }
+    }
+}
+
+.nav{
+    &__list{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+    }
+    &__link{
+        color: $secondary-color;
+        text-decoration: none;
+        font-size: 1rem;
+        border-bottom: 2px solid transparent;
+        transition: 0.3s all ease-in-out;
+        &:hover{
+            color: $third-color;
+            border-bottom: 2px solid $third-color;
+        }
+    }
+}
+
+.mobileNavToggle{
+    display: none;
+}

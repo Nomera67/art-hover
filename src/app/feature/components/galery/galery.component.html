@@ -1,0 +1,24 @@
+<div ngClass="loader" [class.hide]="!isLoading" [style.transitionDelay]="isLoading ? '0s' : '.5s'">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div ngClass="galery" >
+  <ul ngClass="galery__container" *ngIf="!isLoading">
+    <li *ngFor="let tableau of tableaux; let i = index" [ngClass]="{'galery__item': true}" [style.animation-delay]="(i * 100) + 'ms'">
+      <img [src]="tableau.imageUrl" alt="{{ tableau.title }} from {{ tableau.artist }} in {{ tableau.date }}" ngClass="galery__img" loading="lazy">
+    </li>
+  </ul>
+</div>
