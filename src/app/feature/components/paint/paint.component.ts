@@ -11,7 +11,6 @@ import { Tableau } from 'src/app/models/tableau.model';
 })
 
 export class PaintComponent implements OnInit {
-  isLoading = true;
   tableau: Tableau = {
     id: 0,
     title: '',
@@ -21,13 +20,15 @@ export class PaintComponent implements OnInit {
     artistNationality: '',
     moreAbout: '',
   };
+  isAvailable = false;
   
   constructor(private tableauInteraction: TableauInteractionService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id')!;
-    this.tableauInteraction.getTableauById(id).then((tableau: Tableau) => this.tableau = tableau as Tableau);
-    this.isLoading = false;
-    console.log(this.tableau.moreAbout);
+    this.tableauInteraction.getTableauById(id).then(tableau => {
+      this.tableau = tableau as Tableau;
+      this.isAvailable = true;
+    });
   }
 }

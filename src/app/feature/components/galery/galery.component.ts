@@ -22,8 +22,6 @@ export class GaleryComponent implements OnInit {
     this.tableauInteractionService.getTableaux().then(tableaux => {
       this.tableaux = tableaux;
       this.isLoading = false;
-      console.log(tableaux[0])
-      console.log(tableaux)
     });
   }
 
