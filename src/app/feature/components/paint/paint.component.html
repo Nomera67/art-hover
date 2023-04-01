@@ -1,0 +1,29 @@
+<div ngClass="loader" [class.hide]="!isLoading" [style.transitionDelay]="isLoading ? '1s' : '.5s'">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div ngClass="paint__container">
+    <img [src]="tableau.imageUrl" alt="{{tableau.title}} by {{tableau.artist}}" ngClass="paint__image">
+    <div ngClass="paint__about">
+        <ul>
+            <li>Author : {{tableau.artist}}</li>
+            <li>Nationality : {{tableau.artistNationality}}</li>
+            <li>Painted in : {{tableau.date}}</li>
+            <li>Learn more about this painting and visit the website of the Metropolitan Museum : <a [href]="tableau.moreAbout">visit</a></li>
+        </ul>
+    </div>
+</div>
