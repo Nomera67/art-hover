@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'galery', loadChildren: () => import('./feature/components/galery/galery.module').then(m => m.GaleryModule) },
   { path: 'informations', loadChildren: () => import('./feature/components/informations/informations.module').then(m => m.InformationsModule) },
   { path: 'galery/:id', loadChildren: () => import('./feature/components/paint/paint.module').then(m => m.PaintModule) },
+  { path: 'card-game', loadChildren: () => import('./feature/components/home-hero/card-game/card-game.module').then(m => m.CardGameModule) },
   { path: '**', loadChildren: () => import('./shared/components/not-found/not-found.module').then(m => m.NotFoundModule) },
 ];
 

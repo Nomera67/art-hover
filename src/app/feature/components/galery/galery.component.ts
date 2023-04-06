@@ -16,7 +16,7 @@ export class GaleryComponent implements OnInit {
 
   constructor(private tableauInteractionService: TableauInteractionService, private _router: Router) { 
 
-   }
+  }
 
   ngOnInit(): void {
     this.tableauInteractionService.getTableaux().then(tableaux => {

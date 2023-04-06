@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let tableau of tableaux; let i = index" (click)="goPaint(tableau.id.toString())">
+        <img [src]="tableau.imageUrl" alt="">
+
+    </li>
+</ul>
