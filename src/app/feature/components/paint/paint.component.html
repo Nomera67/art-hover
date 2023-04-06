@@ -1,0 +1,32 @@
+<div ngClass="loader" [class.hide]="isAvailable" [style.transitionDelay]="isAvailable ? '.5s' : '1s'">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div ngClass="paint__container" *ngIf="isAvailable">
+    <img [src]="tableau.imageUrl" alt="{{tableau.title}} by {{tableau.artist}}" ngClass="paint__image">
+    <div ngClass="paint__about">
+        <ul>
+            <li>Author : {{tableau.artist}}</li>
+            <span></span>
+            <li>Nationality : {{tableau.artistNationality}}</li>
+            <span></span>
+            <li>Painted in : {{tableau.date}}</li>
+            <span></span>
+            <li>More about the paint : <a [href]="tableau.moreAbout" ngClass="paint__visit">Visit</a></li>
+        </ul>
+    </div>
+</div>
