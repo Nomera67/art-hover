@@ -31,7 +31,7 @@ header[data-visible="false"]{
     height: 50px;
     background-color: rgba(227, 182, 132, .4);
     backdrop-filter: blur(1.6rem);;
-    position: absolute;
+    position: fixed;
     left: 25px;
     top: 25px;
     border-radius: 50%;

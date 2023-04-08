@@ -19,14 +19,20 @@ export class CardGameComponent implements OnInit{
   tableaux: Tableau[] = [];
   imagePositions: ImagePosition[] = [];
   isLoading = true;
+  isFixedPositioning = true;
   
   constructor(private tableauInteractionService: TableauInteractionService, private _router: Router){ }
 
   ngOnInit(): void {
     this.tableauInteractionService.getTableaux().then(tableaux => {
       this.tableaux = tableaux.sort(() => Math.random() - 0.5).slice(0, 15);
-      this.generateImagePositions();
       this.randomColors = this.generateRandomColors(this.tableaux.length, '$random-colors');
+      if (window.innerWidth > 1100) {
+        this.generateImagePositions();
+        this.isFixedPositioning = false;
+      } else {
+        this.isFixedPositioning = true;
+      }
       this.isLoading = false;
     })
   }
@@ -39,18 +45,24 @@ export class CardGameComponent implements OnInit{
     // Boucler sur les images
     for (let i = 0; i < this.tableaux.length; i++) {
       // Générer des coordonnées aléatoires pour chaque image
-      let max_x = parent.innerWidth - 200;
-      let max_y = parent.innerHeight - 300;
+      let max_x, max_y;
+      if (window.innerWidth < 700) {
+        max_x = window.innerWidth - 100;
+        max_y = window.innerHeight - 200;
+      } else {
+        max_x = window.innerWidth - 150;
+        max_y = window.innerHeight - 300;
+      }
 
       let x = Math.max(0, Math.floor(Math.random() * max_x));
       let y = Math.max(0, Math.floor(Math.random() * max_y));
   
-      // Vérifier si les nouvelles coordonnées se chevauchent avec les images existantes
+      // Vérifier si les nouvelles coordonnées se chevauchent de trop avec les images existantes
       for (let j = 0; j < this.imagePositions.length; j++) {
         let existingImage = this.imagePositions[j];
-        if (x > existingImage.x - 200 && x < existingImage.x + 200 &&
-            y > existingImage.y - 250 && y < existingImage.y + 250) {
-          // Les coordonnées se chevauchent, générer de nouvelles coordonnées
+        if (x > existingImage.x - 150 && x < existingImage.x + 150 &&
+            y > existingImage.y - 200 && y < existingImage.y + 200) {
+          // Les coordonnées se chevauchent de trop, générer de nouvelles coordonnées
           x = Math.max(0, Math.floor(Math.random() * max_x));
           y = Math.max(0, Math.floor(Math.random() * max_y));
           // Redémarrer la boucle pour vérifier les nouvelles coordonnées
@@ -62,6 +74,7 @@ export class CardGameComponent implements OnInit{
       this.imagePositions.push({ x: x, y: y });
     }
   }
+
   generateRandomColors(length: number, colors: string): string[] {
     return (colors + ' ').repeat(Math.ceil(length / 5)).split(' ').slice(0, length);
   }
