@@ -1,6 +1,27 @@
-<ul>
-    <li *ngFor="let tableau of tableaux; let i = index" (click)="goPaint(tableau.id.toString())">
-        <img [src]="tableau.imageUrl" alt="">
-
+<div ngClass="loader" [class.hide]="!isLoading" [style.transitionDelay]="isLoading ? '0s' : '.5s'">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+<ul ngClass="cards" *ngIf="!isLoading">
+    <li 
+    *ngFor="let tableau of tableaux; let i = index" 
+    (click)="goPaint(tableau.id.toString())" 
+    ngClass="cards__item random-positioning"
+    [style.animation-delay]="(i * 200) + 'ms'"
+    [ngStyle]="{top: imagePositions[i]?.y + 'px', left: imagePositions[i]?.x + 'px'}">
+        <img [src]="tableau.imageUrl" alt="{{ tableau.title }} from {{ tableau.artist }} made in {{ tableau.date }}">
     </li>
 </ul>

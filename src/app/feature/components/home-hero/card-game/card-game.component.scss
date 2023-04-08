@@ -1,0 +1,124 @@
+.cards{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    list-style-type: none;
+    &__item{
+        cursor: pointer;
+        position: relative;
+        border-radius: 10px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        animation: fadeIn 1s ease-in-out forwards;
+        &:after{
+            content: '';
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .5s ease-in-out;
+        }
+        &:nth-child(1){
+            &:after{
+                background-color: #dea5a4;
+            }
+        }
+        &:nth-child(2){
+            &:after{
+                background-color: #add8e6;
+            }
+        }
+        &:nth-child(3){
+            &:after{
+                background-color: #ffe4b5;
+            }
+        }
+        &:nth-child(4){
+            &:after{
+                background-color: #b0e0e6;
+            }
+        }
+        &:nth-child(5){
+            &:after{
+                background-color: #afeeee;
+            }
+        }
+        &:nth-child(6){
+            &:after{
+                background-color: #ffb347;
+            }
+        }
+        &:nth-child(7){
+            &:after{
+                background-color: #b19cd9;
+            }
+        }
+        &:nth-child(8){
+            &:after{
+                background-color: #ff7f50;
+            }
+        }
+        &:nth-child(9){
+            &:after{
+                background-color: #c9c0bb;
+            }
+        }
+        &:nth-child(10){
+            &:after{
+                background-color: #ffdab9;
+            }
+        }
+        &:nth-child(11){
+            &:after{
+                background-color: #e6e6fa;
+            }
+        }
+        &:nth-child(12){
+            &:after{
+                background-color: #98fb98;
+            }
+        }
+        &:nth-child(13){
+            &:after{
+                background-color: #aec6cf;
+            }
+        }
+        &:nth-child(14){
+            &:after{
+                background-color: #8B8589;
+            }
+        }
+        &:nth-child(15){
+            &:after{
+                background-color: #ffb347;
+            }
+        }
+        &:hover{
+            border-radius: 0px;
+            transform: scale(1.1);
+            &:after{
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            &>img{
+                transform: scale(1.1);
+            }
+        }
+        & > img{
+            width: 150px;
+            display: block;
+            transform: scale(0.99);
+            border-radius: 10px;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+.random-positioning{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50% -50%);
+}

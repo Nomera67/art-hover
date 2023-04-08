@@ -18,7 +18,7 @@
 <div ngClass="galery" >
   <ul ngClass="galery__container" *ngIf="!isLoading">
     <li *ngFor="let tableau of tableaux; let i = index" [ngClass]="{'galery__item': true}" [style.animation-delay]="(i * 100) + 'ms'" (click)="goPaint(tableau.id.toString())">
-      <img [src]="tableau.imageUrl" alt="{{ tableau.title }} from {{ tableau.artist }} in {{ tableau.date }}" ngClass="galery__img" loading="lazy">
+      <img [src]="tableau.imageUrl" alt="{{ tableau.title }} from {{ tableau.artist }} made in {{ tableau.date }}" ngClass="galery__img" loading="lazy">
     </li>
   </ul>
 </div>
