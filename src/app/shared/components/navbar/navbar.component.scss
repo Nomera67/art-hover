@@ -22,7 +22,7 @@ header{
     opacity: 1;
 }
 header[data-visible="false"]{
-    transform: translateY(-200%) translateX(-50%);
+    transform: translateY(-100%) translateX(-50%);
     opacity: 0;
 }
 
@@ -56,7 +56,12 @@ header[data-visible="false"]{
 .arrow[aria-expanded="false"]{
     & img{
         transform: rotate(0deg);
-        filter: drop-shadow(0px 10px 4px $darker-color);
+    }
+    &:hover{
+        & img{
+            filter: drop-shadow(0px 10px 4px $darker-color);
+            transform: translateY(-5px);
+        }
     }
 }
 
