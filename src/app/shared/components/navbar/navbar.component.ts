@@ -37,4 +37,16 @@ export class NavbarComponent {
     })
   }
 
+  hideMenu(){
+    const arrow = document.getElementById("arrowControl");
+    const header = document.getElementById("headerMenu");
+    if(header?.getAttribute("data-visible") === "true") {
+      header.setAttribute("data-visible", "false");
+      arrow?.setAttribute("aria-expanded", "false");
+    } else {
+      header?.setAttribute("data-visible", "true");
+      arrow?.setAttribute("aria-expanded", "true");
+    }
+  }
+
 }
