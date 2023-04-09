@@ -66,9 +66,6 @@ header[data-visible="false"]{
 }
 
 .logo{
-    &__container{
-
-    }
     &__item{
         font-family: DancingScript;
         font-size: 2rem;
@@ -104,4 +101,193 @@ header[data-visible="false"]{
 
 .mobileNavToggle{
     display: none;
+}
+
+@media (max-width: 1000px) {
+    .arrow{
+        display: none;
+    }
+    header{
+        height: 5rem;
+        justify-content: space-between;
+        background-color: transparent;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+    .active{
+        // border-bottom: 2px solid white;
+    }
+    .nav__link{
+        color: white;
+        transform: rotate(-45deg);
+        &:hover{
+            border-bottom: 2px solid $lighter-color;
+        }
+    }
+    .logo__item{
+        font-size: 1.75rem;
+        position: fixed;
+        top: 1.60rem;
+        left: 2rem;
+        z-index: 3;
+        font-size: clamp(2rem, 0.2vw, 2.5rem);
+        transition: all .3s ease-in-out;
+    }
+    .logo__item[data-color="true"]{
+        color: white;
+        &:hover{
+            color: $lighter-color;
+        }
+    }
+    .nav__list{
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        inset: 0 0 0 0;
+        flex-direction: column;
+        background-color: rgba(27, 27, 27, 1);
+        padding: 50px;
+        transform: translateX(100%);
+        transition: transform 250ms ease-in-out;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        // align-items: flex-end;
+        gap: 100px;
+        z-index: 2;
+        &__points{
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-position: center 0%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+            background-size: 3vmin 3vmin;
+            z-index: 1;
+            transition: opacity 800ms ease, background-position 800ms ease-in-out;
+        }
+        &__background{
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 110%;
+            left: 0;
+            top: 0;
+            background-position: center 30%;
+            opacity: 0.8;
+            z-index: -1;
+            background-size: 110vmin;
+            background-image: url('https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80');
+            transition: all 800ms ease;
+        }
+    }
+
+    .nav__list[data-active-index="0"] > .nav__list__points{
+        background-position: center 20%;
+    }
+    .nav__list[data-active-index="0"] > #background__menu{
+        background-position: center 40%;
+    }
+    .nav__list[data-active-index="1"] > .nav__list__points{
+        background-position: center 40%;
+    }
+    .nav__list[data-active-index="1"] > #background__menu{
+        background-position: center 50%;
+    }
+    .nav__list[data-active-index="2"] > .nav__list__points{
+        background-position: center 60%;
+    }
+    .nav__list[data-active-index="2"] > #background__menu{
+        background-position: center 60%;
+    }
+
+    .nav__list:hover > .nav__item > .nav__link{
+        opacity: 0.3;
+        color: white;
+    }
+    .nav__list:hover > .nav__item:hover > .nav__link:hover{
+        opacity: 1;
+        color: white;
+    }
+
+    .nav__item:hover ~ .nav__list__points{
+        opacity: 0.5;
+    }
+    .nav__item:hover ~ .nav__list__background{
+        background-position: center 45%;
+        opacity: 0.4;
+    }
+
+    .nav{
+        &__item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            >a{
+                font-size: clamp(3rem, 8vw, 8rem);
+                z-index: 3;
+            }
+        }
+    }
+
+    .nav__list[data-visible="true"]{
+        transform: translateX(0%);
+        backdrop-filter: blur(20px);
+    }
+
+    .mobileNavToggle{
+        position: fixed;
+        border: 0;
+        width: 24px;
+        height: 24px;
+        top: 1.60rem;
+        right: 2rem;
+        z-index: 4;
+        display: block;
+        cursor: pointer;
+        background: transparent;
+    }
+    .mobileNavToggle[aria-expanded="true"]{
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in-out;
+        transition-delay: 0.6s;
+        & .toggle__line:nth-child(2){
+            width: 0px;
+        }
+        & .toggle__line:nth-child(1), & .line:nth-child(3){
+            -webkit-transition-delay: 0.3s;
+            -o-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+        & .toggle__line:nth-child(1){
+            -webkit-transform: translateY(4px);
+            -ms-transform: translateY(4px);
+            -o-transform: translateY(4px);
+            transform: translateY(4px);
+        }
+        & .toggle__line:nth-child(3){
+            -webkit-transform: translateY(-12px) rotate(90deg);
+            -ms-transform: translateY(-12px) rotate(90deg);
+            -o-transform: translateY(-12px) rotate(90deg);
+            transform: translateY(-12px) rotate(90deg);
+        }
+        & .toggle__line{
+            background: white;
+        }
+    }
+
+    .toggle__line{
+        width: 25px;
+        height: 2px;
+        background: $darker-color;
+        display: block;
+        margin: 6px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
 }

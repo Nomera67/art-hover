@@ -3,7 +3,7 @@
 </div>
 <header id="headerMenu" aria-expanded="true" data-visible="true">
     <div ngClass="logo__container">
-        <span ngClass="logo__item" (click)="homecoming()">Art Hover</span>
+        <span ngClass="logo__item" data-color="false" (click)="homecoming()" id="logoItem">Art Hover</span>
     </div>
     <button id="toggleButton" (click)="toggleNav()" ngClass="mobileNavToggle" aria-controls="primary-navigation" aria-expanded="false" data-visible="false">
         <span class="toggle__line"></span>
@@ -13,13 +13,13 @@
     <nav ngClass="navBar nav" id="navBar">
         <ul id="primary-navigation" data-visible="false" ngClass="nav__list" (mouseenter)="backgroundMove()">
             <li ngClass="nav__item" >
-                <a routerLink="" routerLinkActive="active" ngClass="nav__link">Accueil</a>             
+                <a routerLink="/" routerLinkActive="active" ngClass="nav__link">Accueil</a>             
             </li>
-            <li ngClass="nav__item" routerLinkActive="active">
-                <a routerLink="/galery" ngClass="nav__link">Galerie</a> 
+            <li ngClass="nav__item">
+                <a routerLink="/galery" routerLinkActive="active" ngClass="nav__link">Galerie</a> 
             </li>
-            <li ngClass="nav__item" routerLinkActive="active">
-                <a routerLink="/informations" ngClass="nav__link">Informations</a> 
+            <li ngClass="nav__item">
+                <a routerLink="/informations" routerLinkActive="active" ngClass="nav__link">Informations</a> 
             </li>
             <div ngClass="nav__list__points"></div>
             <div ngClass="nav__list__background" id="background__menu"></div>
