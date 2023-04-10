@@ -13,13 +13,14 @@
     <nav ngClass="navBar nav" id="navBar">
         <ul id="primary-navigation" data-visible="false" ngClass="nav__list" (mouseenter)="backgroundMove()">
             <li ngClass="nav__item" >
-                <a routerLink="/" routerLinkActive="active" ngClass="nav__link">Accueil</a>             
+                
+                <a routerLink="/" routerLinkActive="active" ngClass="nav__link"><span ngClass="nav__link__hover" aria-hidden="true">Home</span>Home</a>             
             </li>
             <li ngClass="nav__item">
-                <a routerLink="/galery" routerLinkActive="active" ngClass="nav__link">Galerie</a> 
+                <a routerLink="/galery" routerLinkActive="active" ngClass="nav__link"><span ngClass="nav__link__hover" aria-hidden="true">Galery</span>Galery</a> 
             </li>
             <li ngClass="nav__item">
-                <a routerLink="/informations" routerLinkActive="active" ngClass="nav__link">Informations</a> 
+                <a routerLink="/informations" routerLinkActive="active" ngClass="nav__link"><span ngClass="nav__link__hover" aria-hidden="true">About</span>About</a> 
             </li>
             <div ngClass="nav__list__points"></div>
             <div ngClass="nav__list__background" id="background__menu"></div>
