@@ -90,16 +90,24 @@ header[data-visible="false"]{
         color: $secondary-color;
         text-decoration: none;
         font-size: 1rem;
-        border-bottom: 2px solid transparent;
         transition: 0.3s all ease-in-out;
+        padding: 5px 10px;
+        border: 1px solid transparent;
         &__hover{
             display: none;
         }
         &:hover{
-            color: $third-color;
-            border-bottom: 2px solid $third-color;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.6);
         }
     }
+}
+
+.active{
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .mobileNavToggle{
@@ -113,7 +121,7 @@ header[data-visible="false"]{
     header{
         height: 5rem;
         justify-content: space-between;
-        background-color: transparent;
+        background-color: rgba(246, 238, 232, 0.6);
         width: 100%;
         margin: 0;
         border-radius: 0;
@@ -122,14 +130,17 @@ header[data-visible="false"]{
         transform: translateX(0%);
     }
     .active{
-        // border-bottom: 2px solid white;
+        border: none;
+        background-color: transparent;
     }
     .nav__link{
         color: lightgray;
         transform: rotate(-45deg);
         position: relative;
+        border: none;
         &:hover{
-            border-bottom: 2px solid transparent;
+            border: none;
+            background-color: transparent;
         }
         &__hover{
             display: inline-block;
@@ -197,9 +208,9 @@ header[data-visible="false"]{
             background-position: center 30%;
             opacity: 0.8;
             z-index: -1;
-            background-size: 200vmin;
+            background-size: 210vmin;
             background-repeat: no-repeat;
-            background-image: url('https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80');
+            background-image: url('../../../../assets/background/background-menu.jpg');
             transition: all 800ms ease;
         }
     }
@@ -227,7 +238,7 @@ header[data-visible="false"]{
         opacity: .5;
         color: lightgrey;
     }
-    .nav__list:hover > .nav__item:hover > .nav__link{
+    .nav__list:hover > .nav__item:hover > .nav__link:hover{
         opacity: 1;
     }
     .nav__list:hover > .nav__item:hover > .nav__link:hover > .nav__link__hover{
