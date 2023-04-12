@@ -24,9 +24,9 @@
             <span></span>
             <li>Nationality : {{tableau.artistNationality}}</li>
             <span></span>
-            <li>Painted in : {{tableau.date}}</li>
+            <li>Painted in : <time [dateTime]="tableau.date">{{tableau.date}}</time></li>
             <span></span>
-            <li>More about the paint : <a [href]="tableau.moreAbout" ngClass="paint__visit">Visit</a></li>
+            <li>More about the paint : <a [href]="tableau.moreAbout" ngClass="paint__visit" target="_blank">Visit</a></li>
         </ul>
     </div>
 </div>

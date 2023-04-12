@@ -120,7 +120,7 @@ header[data-visible="false"]{
         display: none;
     }
     header{
-        height: 5rem;
+        height: $navbar-height;
         justify-content: space-between;
         background-color: rgba(246, 238, 232, 0.8);
         background: none;  

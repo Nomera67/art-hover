@@ -41,3 +41,17 @@
         }
     }
 }
+
+@media (max-width: 920px) {
+    .paint{
+        &__container{
+            flex-direction: column;
+            margin-top: $navbar-height;
+            height: fit-content;
+        }
+        &__image{
+            max-width: 90%;
+            max-height: 80%;
+        }
+    }
+}
