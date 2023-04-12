@@ -15,7 +15,8 @@ header{
     margin: 10px auto;
     width: 700px;
     height: $navbar-height;
-    background-color: rgba(227, 182, 132, .4);
+    background: rgb(227,182,134);
+    background: linear-gradient(90deg, rgba(227,182,134,0) 0%, rgba(227,182,134,1) 50%, rgba(227,182,134,0) 100%);  
     backdrop-filter: blur(1.6rem);
     z-index: 4;
     transition: all 1s ease-in-out;
@@ -89,7 +90,8 @@ header[data-visible="false"]{
     &__link{
         color: $secondary-color;
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: 500;
         transition: 0.3s all ease-in-out;
         padding: 5px 10px;
         border: 1px solid transparent;
@@ -105,9 +107,8 @@ header[data-visible="false"]{
 }
 
 .active{
-    border: 1px solid white;
-    border-radius: 20px;
-    background-color: white;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
 }
 
 .mobileNavToggle{
@@ -121,7 +122,8 @@ header[data-visible="false"]{
     header{
         height: 5rem;
         justify-content: space-between;
-        background-color: rgba(246, 238, 232, 0.6);
+        background-color: rgba(246, 238, 232, 0.8);
+        background: none;  
         width: 100%;
         margin: 0;
         border-radius: 0;
