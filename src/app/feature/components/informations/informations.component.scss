@@ -3,13 +3,23 @@
 .informations{
     &__container{
         margin: $navbar-height auto;
-        padding: 30px 0.2vmin;
+        padding: 30px 5vmin;
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $darker-color;
         gap: 30px;
         > h1{
             font-family: 'DancingScript', 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 5vmin, 3rem);
+            
         }
     }
+}
+
+.informations__introduction, .informations__website, .informations__museum, .informations__author{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }

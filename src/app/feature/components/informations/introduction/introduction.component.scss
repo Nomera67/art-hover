@@ -1,0 +1,30 @@
+@use '../../../../../styles.scss' as *;
+
+@keyframes underlineAppear {
+    from{
+        width: 0%;
+        opacity: 0;
+    }
+    to{
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.introduction{
+    &__title{
+        width: fit-content;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(1.2rem, 3vmin, 1.4rem);
+        &__underline{
+            height: 2px;
+            background-color: $darker-color;
+            animation: underlineAppear 1s ease-in-out backwards;
+        }
+    }
+    &__paragraph{
+        font-size: clamp(.9rem, 2.5vmin, 1.1rem);
+    }
+}
