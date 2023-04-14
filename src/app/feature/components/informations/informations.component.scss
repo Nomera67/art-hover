@@ -1,0 +1,57 @@
+@use '../../../../styles.scss' as *;
+
+@keyframes partAppears {
+    from{
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    
+}
+@keyframes titleAppears{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.informations{
+    &__container{
+        margin: $navbar-height auto;
+        padding: 30px 5vmin;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $darker-color;
+        gap: 30px;
+        > h1{
+            font-family: 'DancingScript', 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 5vmin, 3rem);
+            animation: titleAppears 1s ease-in-out backwards;
+        }
+    }
+    &__introduction{
+        animation: partAppears 1s 0.5s ease-in-out backwards;
+    }
+    &__website{
+        animation: partAppears 1s 1s ease-in-out backwards;
+    }
+    &__museum{
+        animation: partAppears 1s 1.5s ease-in-out backwards;
+    }
+    &__author{
+        animation: partAppears 1s 2s ease-in-out backwards;
+    }
+}
+
+.informations__introduction, .informations__website, .informations__museum, .informations__author{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
