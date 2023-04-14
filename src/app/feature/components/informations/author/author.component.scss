@@ -13,6 +13,7 @@
 
 .author{
     &__title{
+        margin: auto;
         width: fit-content;
         font-size: 1.5rem;
         display: flex;
@@ -26,6 +27,15 @@
     }
     &__paragraph{
         font-size: clamp(.9rem, 2.5vmin, 1.1rem);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &:nth-child(2){
+            align-items: center;
+        }
+    }
+    &__interest{
+        text-align: center;
     }
     &__link{
         display: inline-block;
