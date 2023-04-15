@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PaintRoutingModule } from './paint-routing.module';
 import { PaintComponent } from './paint.component';
+import { LoaderModule } from 'src/app/shared/components/loader/loader.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PaintComponent } from './paint.component';
   ],
   imports: [
     CommonModule,
-    PaintRoutingModule
+    PaintRoutingModule,
+    LoaderModule
   ]
 })
 export class PaintModule { }

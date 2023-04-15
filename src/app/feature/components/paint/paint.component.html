@@ -1,21 +1,4 @@
-<div ngClass="loader" [class.hide]="isAvailable" [style.transitionDelay]="isAvailable ? '.5s' : '1s'">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
+<app-loader [class.hide]="isAvailable" [style.transitionDelay]="isAvailable ? '.5s' : '1s'"></app-loader>
 <div ngClass="paint__container" *ngIf="isAvailable">
     <img [src]="tableau.imageUrl" alt="{{tableau.title}} by {{tableau.artist}}" ngClass="paint__image">
     <div ngClass="paint__about">
