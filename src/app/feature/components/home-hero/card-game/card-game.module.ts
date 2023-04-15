@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardGameComponent } from './card-game.component';
 import { CardGameRoutingModule } from './card-game-routing.module';
+import { LoaderModule } from 'src/app/shared/components/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { CardGameRoutingModule } from './card-game-routing.module';
   ],
   imports: [
     CommonModule,
-    CardGameRoutingModule
+    CardGameRoutingModule,
+    LoaderModule
   ],
   exports: [
     CardGameComponent

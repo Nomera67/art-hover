@@ -1,20 +1,4 @@
-<div ngClass="loader" [class.hide]="!isLoading" [style.transitionDelay]="isLoading ? '0s' : '.5s'">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+<app-loader [class.hide]="!isLoading" [style.transitionDelay]="isLoading ? '0s' : '.5s'"></app-loader>
 <div ngClass="cards__container">
     <ul ngClass="cards" [ngClass]="{'fixed-positioning': isFixedPositioning}" *ngIf="!isLoading">
         <li 
