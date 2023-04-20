@@ -1,1 +1,14 @@
-<p>not-found works!</p>
+<div ngClass="notfound__container">
+    <p>The page you are looking for cannot be found. You can continue your visit :</p>
+    <div ngClass="notfound__cards">
+        <div ngClass="notfound__item" (click)="toHome()">
+            <h2>Homepage</h2>
+        </div>
+        <div ngClass="notfound__item" (click)="toGallery()">
+            <h2>Gallery</h2>
+        </div>
+        <div ngClass="notfound__item" (click)="toAbout()">
+            <h2>About</h2>
+        </div>
+    </div>
+</div>

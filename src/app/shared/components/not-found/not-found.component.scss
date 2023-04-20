@@ -1,0 +1,59 @@
+@use '../../../../styles.scss' as *;
+
+.notfound{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 1200px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%);
+        &>p{
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            text-align: center;
+            color: $darker-color;
+        }
+    }
+    &__cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__item{
+        border-radius: 30px;
+        height: 100px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        filter: sepia(100%);
+        transition: all 0.5s ease-in-out;
+        background-size: 100%;
+        background-position: 50% 50%;
+        &:hover{
+            filter: sepia(0%);
+            background-size: 120%;
+            border-radius: 0;
+            transform: scale(1.1);
+            color: #15EAD5;
+        }
+        &>h2{
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+        }
+        &:nth-child(1){
+            background-image: url('../../../../assets/background/links/DP164849min.jpg');
+        }
+        &:nth-child(2){
+            background-image: url('../../../../assets/background/links/DT1556min.jpg');
+        }
+        &:nth-child(3){
+            background-image: url('../../../../assets/background/links/mainmin.jpg');
+        }
+
+    }
+}

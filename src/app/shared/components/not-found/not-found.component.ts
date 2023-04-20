@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
+
+  constructor(public _router: Router){}
+
+  toHome(){
+    this._router.navigate(['/']);
+  }
+
+  toGallery(){
+    this._router.navigate(['/gallery'])
+  }
+
+  toAbout(){
+    this._router.navigate(['/informations'])
+  }
 
 }
