@@ -26,7 +26,7 @@ export class GaleryComponent implements OnInit {
   }
 
   goPaint(id: string) {
-    this._router.navigate(['/galery', id]);
+    this._router.navigate(['/gallery', id]);
   }
   
   

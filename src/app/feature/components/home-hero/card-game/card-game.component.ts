@@ -38,7 +38,7 @@ export class CardGameComponent implements OnInit{
   }
 
   goPaint(id: string) {
-    this._router.navigate(['/galery', id]);
+    this._router.navigate(['/gallery', id]);
   }
 
   generateImagePositions() {
